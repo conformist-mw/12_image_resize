@@ -3,7 +3,7 @@ import argparse
 from os.path import exists, splitext
 
 
-def createParser():
+def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('imagepath', help='Путь к исходной картинке')
     parser.add_argument('-w', '--width', type=int)
@@ -50,7 +50,7 @@ def save_image(image, source_path, path_to_result):
 
 
 if __name__ == '__main__':
-    parser = createParser()
+    parser = create_parser()
     ns = parser.parse_args()
     if ns.scale and any([ns.height, ns.width]):
         parser.error('should be either --scale or [--width or --height]')
